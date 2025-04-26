@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+aiosqlite           # if you want async SQLAlchemy support
+openai==0.28
+python-dotenv
+pydantic

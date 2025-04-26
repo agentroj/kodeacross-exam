@@ -1,0 +1,74 @@
+
+{
+  "info": {
+    "name": "Bowling Shoe Rental API",
+    "_postman_id": "e3b0c442-98fc-4625-b1d1-0f1e3a2b3c4d",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"age\": 70,\n  \"contact_info\": \"jane@example.com\",\n  \"is_disabled\": true,\n  \"medical_conditions\": [\"diabetes\"]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/customers",
+          "host": ["{{base_url}}"],
+          "path": ["customers"]
+        }
+      }
+    },
+    {
+      "name": "List Customers",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/customers",
+          "host": ["{{base_url}}"],
+          "path": ["customers"]
+        }
+      }
+    },
+    {
+      "name": "Create Rental",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customer_id\": \"<PASTE_CUSTOMER_ID_HERE>\",\n  \"shoe_size\": 9.5,\n  \"rental_fee\": 10.0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/rentals",
+          "host": ["{{base_url}}"],
+          "path": ["rentals"]
+        }
+      }
+    },
+    {
+      "name": "List Rentals",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/rentals",
+          "host": ["{{base_url}}"],
+          "path": ["rentals"]
+        }
+      }
+    }
+  ]
+}

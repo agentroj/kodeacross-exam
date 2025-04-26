@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    volumes:
+      - ./:/usr/src/app        # code
+      - ./data:/usr/src/app    # SQLite will write app.db here
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
